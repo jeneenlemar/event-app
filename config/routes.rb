@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # USERS need create, show, update, destroy
     
     post "/users" => "users#create"
+    get "/users/:id" => "users#show"
+
 
   end
 end
