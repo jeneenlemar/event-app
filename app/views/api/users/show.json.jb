@@ -1,1 +1,7 @@
-@user
+# @user
+render partial: "user.json.jb", locals: {user: @user}
+
+# syntax for special partials for later!
+# user[:recipes] = @user.events.map do |recipe|
+#   render partial: "api/recipes/recipe.json.jb", locals: {recipe: recipe}
+# end

@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_many :events
   has_many :user_events
 
-  # has_many :attending_events, through: :user_events - SETUP AND FIX WITH DANI
+  has_many :attending_events, through: :user_events, source: :event
 
 end

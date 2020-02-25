@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
-
+  before_action :authenticate_user, only: [:update, :destroy]
   def create
-    user = User.new(
+    @user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
@@ -22,17 +22,26 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+
+    @user = current_user
     @user.first_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
     @user.address = params[:address] || @user.address
-    @user.password = params[:password] || @user.password
-    @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
+    if params[:password]
+      @user.password = params[:password]
+      @user.password_confirmation = params[:password_confirmation] 
+    end
     @user.profile_img = params[:profile_img] || @user.profile_img
-
+    @user.save
     render "show.json.jb"
-    
   end
+
+  def destroy
+    user = User.find_by(id: params[:id])
+    user.destroy
+    render json: {message: "User account successfully deleted"}
+  end  
+    
 
 end

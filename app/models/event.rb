@@ -3,6 +3,6 @@ class Event < ApplicationRecord
   has_many :user_events
   belongs_to :category
 
-  # has_many :attending_users, through: :user_events -SETUP AND FIX WITH DANI
+  has_many :attendees, through: :user_events, source: :user
 
 end
