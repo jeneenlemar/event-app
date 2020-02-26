@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
 
     get "/events" => "events#index"
+    post "/events" => "events#create"
+
 
 
   end

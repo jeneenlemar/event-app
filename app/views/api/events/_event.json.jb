@@ -1,0 +1,14 @@
+{
+  title: event.title,
+  short_description: event.short_description,
+  details: event.details,
+  time_start: event.time_start,
+  duration: event.duration,
+  category_id: event.category_id,
+  kit_price: event.kit_price,
+  location_description: event.location_description,
+  address: event.address,
+  user_id: current_user.id,
+  img_url: event.img_url,
+  slots: event.slots
+}
