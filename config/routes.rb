@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
     get "/user_events" => "user_events#index"
     post "/user_events" => "user_events#create"
+    get "/user_events/:id" => "user_events#show"
+    
+
 
 
 

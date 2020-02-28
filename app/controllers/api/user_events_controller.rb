@@ -12,6 +12,11 @@ class Api::UserEventsController < ApplicationController
     )
     @user_event.save
     render "show.json.jb"
-     
+  end
+
+  def show
+    @user_event = UserEvent.find(params[:id])
+    render "show.json.jb"
+    
   end
 end
