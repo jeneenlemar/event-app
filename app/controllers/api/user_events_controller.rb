@@ -17,6 +17,13 @@ class Api::UserEventsController < ApplicationController
   def show
     @user_event = UserEvent.find(params[:id])
     render "show.json.jb"
+  end
+
+  def destroy
+    @user_event = UserEvent.find(params[:id])
+    @user_event.destroy
+
+    render json: {message: "Your reservation to this event has been cancelled"}
     
   end
 end
