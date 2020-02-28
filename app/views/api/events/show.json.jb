@@ -1,1 +1,12 @@
 render partial: "event.json.jb", locals: { event: @event }
+
+# needed for customizing? 
+# event[:user] = {
+#   id: @event.user.id,
+#   first_name: @event.user.first_name,
+# last_name: @event.user.last_name
+# }
+
+# event[:user] = render partial: "api/users/user.json.jb", locals: {user: @event.user}
+
+# event
