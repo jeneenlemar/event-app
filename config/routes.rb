@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get "/categories/:id" => "categories#show"
 
     get "/user_events" => "user_events#index"
+    post "/user_events" => "user_events#create"
 
 
 
