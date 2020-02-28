@@ -21,6 +21,11 @@ Rails.application.routes.draw do
     delete "/events/:id" => "events#destroy"
 
     get "/categories" => "categories#index"
+    get "/categories/:id" => "categories#show"
+
+    get "/user_events" => "user_events#index"
+
+
 
 
 

@@ -1,0 +1,5 @@
+{
+  id: category.id,
+  name: category.name,
+  img_url: category.img_url
+}

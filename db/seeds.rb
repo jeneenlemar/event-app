@@ -31,3 +31,16 @@
 # Event.create(title: "Welcome Board", short_description: "Wooden Board with Stain and Paint designs", details: "big long board with WELCOME message and various small stenciled items to stain or paint", time_start: "2020-04-10 18:00", duration: "120", category_id: "2", kit_price: 40, location_description: "Legion", address: "14 Jefferson St Lima, OH", user_id: 2, img_url: "https://www.pinterest.com/pin/118641771404440230/", slots: 8, )
 
 # UserEvent.create(event_id: 2, user_id: 1)
+
+# Category.create(name: "Beading & Jewelry", img_url: "https://www.canva.com/icons/MADN2Gvoprw-mardi-gras-beads-icon/")
+
+# Category.create(name: "Candlemaking", img_url: "https://www.canva.com/icons/MADpjvuWIYM-spa-candle-fill-style-icon/")
+# Category.create(name: "Pottery", img_url: "https://www.canva.com/icons/MAC7AATxCNY-pottery-vector-icon/")
+# Category.create(name: "Painting & Drawing", img_url: "https://www.canva.com/icons/MADr0AGeaTo-paint-pallete-with-brush-education-block-and-flat-icon/")
+# Category.create(name: "Quilting", img_url: "https://www.canva.com/icons/MADtCJRBcmc-seam-icon/")
+# Category.create(name: "Scrapbooking", img_url: "https://www.canva.com/icons/MADIrxvouQU-con-for-creativity-scrapbooking/")
+# Category.create(name: "Woodworking", img_url: "https://www.canva.com/icons/MACzCZxa3ak-electric-saw-woodwork-table/")
+# Category.create(name: "Knitting & Crochet", img_url: "https://www.canva.com/icons/MAC9oCO24MY-knitting-neddles-icon/")
+# Category.create(name: "Stitching", img_url: "https://www.canva.com/icons/MAC3CV0b2KY-cross-stitch-icon/")
+
+
