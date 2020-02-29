@@ -48,8 +48,13 @@ class Api::UsersController < ApplicationController
 
   def destroy
     @user = User.find_by(id: params[:id])
-    @user.destroy
-    render json: {message: "User account successfully deleted"}
+    if @user == current_user
+      @user.destroy
+      render json: {message: "User account successfully deleted"}
+    else
+      render json: {message: "unauthorized access for this account"}
+    end
+    
   end  
     
 
