@@ -3,16 +3,16 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(
       first_name: params[:first_name],
-      last_name: params[:last_name],
+      # last_name: params[:last_name],
       email: params[:email],
-      address: params[:address],
+      # address: params[:address],
       password: params[:password],
       password: params[:password_confirmation]
       )
-    if user.save
-      render json: {message: "User created successfully"}, status: :created
+    if @user.save
+      render "show.json.jb"
     else
-      render json: { errors: user.errors.full_messages }, status: :bad_request
+      render json: { errors: @user.errors.full_messages }, status: :bad_request
     end
   end
 
@@ -23,23 +23,32 @@ class Api::UsersController < ApplicationController
 
   def update
 
-    @user = current_user
-    @user.first_name = params[:first_name] || @user.first_name
-    @user.last_name = params[:last_name] || @user.last_name
-    @user.email = params[:email] || @user.email
-    @user.address = params[:address] || @user.address
-    if params[:password]
-      @user.password = params[:password]
-      @user.password_confirmation = params[:password_confirmation] 
+    @user = User.find_by(id: params[:id])
+    if @user == current_user
+      @user = current_user
+      @user.first_name = params[:first_name] || @user.first_name
+      @user.last_name = params[:last_name] || @user.last_name
+      @user.email = params[:email] || @user.email
+      @user.address = params[:address] || @user.address
+      if params[:password]
+        @user.password = params[:password]
+        @user.password_confirmation = params[:password_confirmation] 
+      end
+      @user.profile_img = params[:profile_img] || @user.profile_img
+      if @user.save
+        render "show.json.jb"
+      else
+        render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity  
+      end
+    else
+      render json: {message: "unauthorized access for this account"}
     end
-    @user.profile_img = params[:profile_img] || @user.profile_img
-    @user.save
-    render "show.json.jb"
+    
   end
 
   def destroy
-    user = User.find_by(id: params[:id])
-    user.destroy
+    @user = User.find_by(id: params[:id])
+    @user.destroy
     render json: {message: "User account successfully deleted"}
   end  
     
