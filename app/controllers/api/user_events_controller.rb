@@ -10,8 +10,11 @@ class Api::UserEventsController < ApplicationController
       event_id: params["event_id"],
       user_id: current_user.id
     )
-    @user_event.save
-    render "show.json.jb"
+    if @user_event.save
+      render "show.json.jb"
+    else
+      render json: { errors: @user_event.errors.full_messages }, status: :bad_request
+    end
   end
 
   def show
@@ -21,9 +24,14 @@ class Api::UserEventsController < ApplicationController
 
   def destroy
     @user_event = UserEvent.find(params[:id])
-    @user_event.destroy
+    if @user_event.user_id == current_user.id
+      @user_event.destroy
+      render json: {message: "Your reservation to this event has been cancelled"}
+    else
+      render json: {message: "You are not authorized to delete this reservation"}
+    end
+   
 
-    render json: {message: "Your reservation to this event has been cancelled"}
     
   end
 end
