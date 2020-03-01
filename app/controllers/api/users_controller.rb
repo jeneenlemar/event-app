@@ -22,7 +22,6 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-
     @user = User.find_by(id: params[:id])
     if @user == current_user
       @user = current_user
@@ -42,8 +41,7 @@ class Api::UsersController < ApplicationController
       end
     else
       render json: {message: "unauthorized access for this account"}
-    end
-    
+    end 
   end
 
   def destroy
@@ -54,8 +52,6 @@ class Api::UsersController < ApplicationController
     else
       render json: {message: "unauthorized access for this account"}
     end
-    
   end  
     
-
 end
