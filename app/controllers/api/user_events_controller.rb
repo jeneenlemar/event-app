@@ -1,7 +1,7 @@
 class Api::UserEventsController < ApplicationController
 
   def index
-    @user_events = UserEvent.all
+    @user_events = current_user.user_events
     render "index.json.jb"
   end
 

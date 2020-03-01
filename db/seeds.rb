@@ -43,4 +43,50 @@
 # Category.create(name: "Knitting & Crochet", img_url: "https://www.canva.com/icons/MAC9oCO24MY-knitting-neddles-icon/")
 # Category.create(name: "Stitching", img_url: "https://www.canva.com/icons/MAC3CV0b2KY-cross-stitch-icon/")
 
+# Event.create(title: "Painting military honors", short_description: "Simple Painting project as gift for military member", details: "Here is a whole bunch of information for the project and such. We hope you like our projects", time_start: "2020-04-05 18:00", duration: "60", category_id: "6", kit_price: 15, location_description: "Lima VFW", address: "123 Main St Lima, OH", user_id: 8, img_url: "https://cdn.shopify.com/s/files/1/0015/9298/3639/products/canvas-prints-personalized-canvas-half-flag-walking-away-soldier-24-x-16-best-seller-14613947842695_2000x.jpg?v=1581592908", slots: 6, )
+# Event.create(title: "Painting simple kitty", short_description: "Simple painting project of cute kitty", details: "Here is a whole bunch of information for the project and such. We hope you like our projects", time_start: "2020-04-03 19:00", duration: "90", category_id: "6", kit_price: 15, location_description: "Lima VFW", address: "123 Main St Lima, OH", user_id: 8, img_url: "https://m.media-amazon.com/images/I/71aAL9UxSuL._AC_UL320_ML3_.jpg", slots: 6, )
+# Event.create(title: "Painting Who Cares", short_description: "Simple painting project funny quote", details: "Here is a whole bunch of information for the project and such. We hope you like our projects", time_start: "2020-04-03 19:00", duration: "160", category_id: "6", kit_price: 25, location_description: "Lima VFW", address: "123 Main St Lima, OH", user_id: 9, img_url: "https://www.google.com/url?sa=i&url=http%3A%2F%2Frebloggy.com%2Fpost%2Fart-painting-who-cares-artists-on-tumblr-leeshit%2F93348585978&psig=AOvVaw3xzB1O0fksq9ZE9ZM0rZoq&ust=1583109463207000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDklN2E-OcCFQAAAAAdAAAAABAD", slots: 7, )
+# Event.create(title: "Clay Cup", short_description: "clay cup", details: "Here is a whole bunch of information for the project and such. We hope you like our projects", time_start: "2020-04-02 19:00", duration: "160", category_id: "5", kit_price: 10, location_description: "Lima VFW", address: "123 Main St Lima, OH", user_id: 7, img_url: "https://i.ebayimg.com/images/g/FWYAAOSw2bFcPQsK/s-l300.jpg", slots: 4, )
+# Event.create(title: "Scented Candles", short_description: "make scented candles", details: "Here is a whole bunch of information for the project and such. We hope you like our projects", time_start: "2020-04-05 18:00", duration: "90", category_id: "4", kit_price: 17, location_description: "Lima VFW", address: "123 Main St Lima, OH", user_id: 1, img_url: "https://ak1.ostkcdn.com/images/products/is/images/direct/6f20e5590455e85ee09e5a676371ed846e59741f/LANGRIA-3-In-1-Scented-Candle-Kit-Includes-Candle-Snuffer-%26-Wick-Trimmer%2C-Marbled-Ceramic-Cup%2C-100%25-Soy-Wax.jpg", slots: 8, )
+
+# UserEvent.create(event_id: 1, user_id: 2)
+# UserEvent.create(event_id: 1, user_id: 9)
+# UserEvent.create(event_id: 1, user_id: 6)
+# UserEvent.create(event_id: 1, user_id: 7)
+# UserEvent.create(event_id: 4, user_id: 8)
+# UserEvent.create(event_id: 4, user_id: 9)
+# UserEvent.create(event_id: 4, user_id: 1)
+# UserEvent.create(event_id: 5, user_id: 8)
+# UserEvent.create(event_id: 5, user_id: 2)
+# UserEvent.create(event_id: 5, user_id: 6)
+# UserEvent.create(event_id: 10, user_id: 1)
+# UserEvent.create(event_id: 10, user_id: 2)
+# UserEvent.create(event_id: 10, user_id: 7)
+# UserEvent.create(event_id: 11, user_id: 8)
+# UserEvent.create(event_id: 11, user_id: 9)
+# UserEvent.create(event_id: 12, user_id: 10)
+# UserEvent.create(event_id: 12, user_id: 1)
+# UserEvent.create(event_id: 14, user_id: 10)
+# UserEvent.create(event_id: 14, user_id: 6)
+# UserEvent.create(event_id: 14, user_id: 7)
+# UserEvent.create(event_id: 15, user_id: 7)
+# UserEvent.create(event_id: 15, user_id: 9)
+# UserEvent.create(event_id: 16, user_id: 2)
+# UserEvent.create(event_id: 16, user_id: 7)
+# UserEvent.create(event_id: 16, user_id: 8)
+# UserEvent.create(event_id: 17, user_id: 1)
+# UserEvent.create(event_id: 17, user_id: 2)
+# UserEvent.create(event_id: 17, user_id: 6)
+
+
+
+
+
+
+
+
+
+
+
+
 
