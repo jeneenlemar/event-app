@@ -1,1 +1,14 @@
-render partial: "user_event.json.jb", locals: { user_event: @user_event }
+user_event = render partial: "user_event.json.jb", locals: { user_event: @user_event }
+
+user_event[:details] = {
+  event_title: @user_event.event,
+  attendee_first_name: @user_event.user.first_name,
+  attendee_last_name: @user_event.user.last_name
+
+
+  #NOTE: make sure you call this on an existing record or you will get error!!!! 
+
+
+}
+
+user_event

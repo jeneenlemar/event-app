@@ -9,7 +9,7 @@
   kit_price: event.kit_price,
   location_description: event.location_description,
   address: event.address,
-  host: event.user_id,
+  # host: event.user_id,
   img_url: event.img_url,
   slots: event.slots
 }
