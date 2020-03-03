@@ -5,9 +5,12 @@
     event_title: user_event.event.title,
     event_description: user_event.event.short_description,
     event_date_time: user_event.event.time_start.strftime("%A, %d %b %Y %l:%M %p"),
-    event_img: user_event.event.img_url
-    # host: user_event.event.user_id
-    # FIX THIS 
+    event_img: user_event.event.img_url,
+    host_first_name: user_event.event.user.first_name,
+    host_last_name: user_event.event.user.last_name
+
+
+    
 
 
   }
