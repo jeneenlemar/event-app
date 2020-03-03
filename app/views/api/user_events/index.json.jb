@@ -1,3 +1,16 @@
 @user_events.map do |user_event|
-  render partial: "user_event.json.jb", locals: { user_event: user_event }
+  
+  u_e = render partial: "user_event.json.jb", locals: { user_event: user_event }
+  u_e[:details] = {
+    event_title: user_event.event.title,
+    event_description: user_event.event.short_description,
+    event_date_time: user_event.event.time_start.strftime("%A, %d %b %Y %l:%M %p"),
+    event_img: user_event.event.img_url
+    # host: user_event.event.user_id
+    # FIX THIS 
+
+
+  }
+  u_e
 end
+

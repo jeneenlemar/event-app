@@ -62,10 +62,15 @@ class Api::EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    @event.destroy
+    if @event.user_id == current_user.id
+      @event.destroy
     render json: {message: "The event has been successfully cancelled"}
+    else
+      render json: {message: "Permission denied. You do not have the authority to delete this information"}
+    end
+    
 
-    # NOTE:  Should we add in something to provide a reason or to send notifications to attendees???
+    # NOTE:  Should we add in something to provide a reason or to send notifications to attendees??? Also if we destroy the events we need to destroy/archive all the reservations!
     
   end
 
