@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :events, dependent: :destroy
-  has_many :user_events
+  has_many :user_events, dependent: :destroy
 
   has_many :attending_events, through: :user_events, source: :event
 
