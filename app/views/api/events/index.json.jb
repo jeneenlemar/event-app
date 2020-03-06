@@ -1,4 +1,7 @@
 @events.map do |event|
   render partial: "event.json.jb", locals: { event: event }
 end
+
+# Want the categories list to show here too, but I don't think my association will allow for it to come across.
+
 # @events

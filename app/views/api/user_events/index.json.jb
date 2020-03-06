@@ -8,12 +8,18 @@
     event_img: user_event.event.img_url,
     host_first_name: user_event.event.user.first_name,
     host_last_name: user_event.event.user.last_name
-
-
-    
-
-
   }
-  u_e
+  # what we brainstormed
+  # u_e[:hosting] = @user_event.event.map do |event|
+  #   e = render partial: "api/events/event" , locals: { event: event
+  #   }
+  #   e
+  # end
+
+  u_e 
+
+  
+
+
 end
 
