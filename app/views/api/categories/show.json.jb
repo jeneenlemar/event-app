@@ -1,13 +1,17 @@
-json = render partial: "category.json.jb", locals: { category: @category }
+filtered_events = render partial: "category.json.jb", locals: { category: @category }
 
-json[:data] = @category.events
+filtered_events = @category.events
 
-# render event partial
+# filtered_events[:details] = {
+#   event_title: @category.events.title
+# }
 
-json[:info] = render partial: "api/events/event.json.jb" locals: {event: @}
+# filtered_events[:details] = @category.events.map do |event|
+#   render partial: "api/events/event.json.jb", locals: {event: @event}
+# end
 
 
 
 
 
-json
+filtered_events

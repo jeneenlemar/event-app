@@ -87,10 +87,10 @@
 
 # Event.create(title: "Painting silly sample", short_description: "Simple Painting project as gift for military member", details: "Here is a whole bunch of information for the project and such. We hope you like our projects", time_start: "2020-04-05 18:00", duration: "60", category_id: "6", kit_price: 15, location_description: "Lima VFW", address: "123 Main St Lima, OH", user_id: 8, img_url: "https://cdn.shopify.com/s/files/1/0015/9298/3639/products/canvas-prints-personalized-canvas-half-flag-walking-away-soldier-24-x-16-best-seller-14613947842695_2000x.jpg?v=1581592908", slots: 6, )
 
-UserEvent.create(event_id: 23, user_id: 1)
-UserEvent.create(event_id: 23, user_id: 2)
-UserEvent.create(event_id: 17, user_id: 13)
-UserEvent.create(event_id: 16, user_id: 13)
+# UserEvent.create(event_id: 23, user_id: 1)
+# UserEvent.create(event_id: 23, user_id: 2)
+# UserEvent.create(event_id: 17, user_id: 13)
+# UserEvent.create(event_id: 16, user_id: 13)
 
 
 
