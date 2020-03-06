@@ -1,25 +1,15 @@
-@user_events.map do |user_event|
-  
-  u_e = render partial: "user_event.json.jb", locals: { user_event: user_event }
-  u_e[:details] = {
-    event_title: user_event.event.title,
-    event_description: user_event.event.short_description,
-    event_date_time: user_event.event.time_start,
-    event_img: user_event.event.img_url,
-    host_first_name: user_event.event.user.first_name,
-    host_last_name: user_event.event.user.last_name
-  }
-  # what we brainstormed
-  # u_e[:hosting] = @user_event.event.map do |event|
-  #   e = render partial: "api/events/event" , locals: { event: event
-  #   }
-  #   e
-  # end
-
-  u_e 
-
-  
+# 
 
 
-end
 
+{
+  attending_events: @user_events.map do |user_event|  
+    u_e = render partial: "user_event.json.jb", locals: { user_event: user_event }
+    u_e[:event] = render partial: "api/events/event.json.jb", locals: {event: user_event.event}
+    u_e 
+  end,
+  hosting_events: current_user.events.map do |event|
+    e = render partial: "api/events/event.json.jb", locals: {event: event}
+    e
+  end
+}
