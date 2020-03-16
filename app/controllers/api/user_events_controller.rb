@@ -23,12 +23,10 @@ class Api::UserEventsController < ApplicationController
   end
 
   def destroy
-    @user_event = UserEvent.find(params[:id])
-    if @user_event.user_id == current_user.id
-      @user_event.destroy
-      render json: {message: "Your reservation to this event has been cancelled"}
-    else
-      render json: {message: "You are not authorized to delete this reservation"}
-    end    
+    @user_event = UserEvent.find_by(event_id: params[:event_id], user_id: current_user.id)
+    @user_event.destroy
+    render json: {message: "Your reservation to this event has been cancelled"}
+        
+        
   end
 end
