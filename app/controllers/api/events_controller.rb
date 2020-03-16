@@ -1,5 +1,6 @@
 class Api::EventsController < ApplicationController
-
+  before_action :authenticate_user, only: [:update, :destroy]
+  
   def index
     @events = Event.all
     render "index.json.jb"
@@ -64,7 +65,7 @@ class Api::EventsController < ApplicationController
     @event = Event.find(params[:id])
     if @event.user_id == current_user.id
       @event.destroy
-    render json: {message: "The event has been successfully cancelled"}
+      render json: {message: "The event has been successfully cancelled"}
     else
       render json: {message: "Permission denied. You do not have the authority to delete this information"}
     end

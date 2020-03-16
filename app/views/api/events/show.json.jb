@@ -1,12 +1,15 @@
 event = render partial: "event.json.jb", locals: { event: @event }
 
-# needed for customizing? 
-event[:host] = {
-  user_id: @event.user.id,
-  first_name: @event.user.first_name,
-last_name: @event.user.last_name
-}
 
-# event[:user] = render partial: "api/users/user.json.jb", locals: {user: @event.user}
+
+if current_user
+  event[:attending] = current_user.attending_events.include?(@event)
+end
+
+event[:host] = render partial: "api/users/user.json.jb", locals: {user: @event.user}
+event[:attendees] = @event.attendees.map do |attendee|
+  render partial: "api/users/user.json.jb", locals: {user: attendee}
+
+end
 
 event

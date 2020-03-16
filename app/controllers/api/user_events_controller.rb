@@ -29,9 +29,6 @@ class Api::UserEventsController < ApplicationController
       render json: {message: "Your reservation to this event has been cancelled"}
     else
       render json: {message: "You are not authorized to delete this reservation"}
-    end
-   
-
-    
+    end    
   end
 end

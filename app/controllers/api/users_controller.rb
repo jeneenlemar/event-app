@@ -36,8 +36,8 @@ class Api::UsersController < ApplicationController
       @user.profile_img = params[:profile_img] || @user.profile_img
       if @user.save
         render "show.json.jb"
-      else
-        render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity  
+    else
+      render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity  
       end
     else
       render json: {message: "unauthorized access for this account"}

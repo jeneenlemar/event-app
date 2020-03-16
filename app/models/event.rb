@@ -5,4 +5,8 @@ class Event < ApplicationRecord
 
   has_many :attendees, through: :user_events, source: :user
 
+  def slots_remaining
+    slots - user_events.count
+  end
+
 end
