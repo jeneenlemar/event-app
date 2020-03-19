@@ -7,6 +7,9 @@ class Api::EventsController < ApplicationController
   end
 
   def create
+    response = Cloudinary::Uploader.upload(params[:image])
+    cloudinary_url = response["secure_url"]
+
     @event = Event.new(
       title: params["title"],
       short_description: params["short_description"],
@@ -18,7 +21,7 @@ class Api::EventsController < ApplicationController
       location_description: params["location_description"],
       address: params["address"],
       user_id: current_user.id,
-      img_url: params["img_url"],
+      img_url: cloudinary_url,
       slots: params["slots"]
     )
     if @event.save
@@ -56,9 +59,6 @@ class Api::EventsController < ApplicationController
     else
       render json: {message: "Permission denied. You do not have the authority to update this information"}
     end
-
-    
-     
   end
 
   def destroy
