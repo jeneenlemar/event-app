@@ -7,8 +7,6 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    response = Cloudinary::Uploader.upload(params[:image])
-    cloudinary_url = response["secure_url"]
 
     @event = Event.new(
       title: params["title"],
@@ -20,10 +18,14 @@ class Api::EventsController < ApplicationController
       kit_price: params["kit_price"],
       location_description: params["location_description"],
       address: params["address"],
-      user_id: current_user.id,
-      img_url: cloudinary_url,
+      user_id: current_user.id,  
       slots: params["slots"]
     )
+    if params[:image]
+      response = Cloudinary::Uploader.upload(params[:image])
+      @event.img_url = response["secure_url"]
+
+    end
     if @event.save
       render "show.json.jb"
     else
