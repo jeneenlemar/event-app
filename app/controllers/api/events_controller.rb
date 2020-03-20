@@ -50,9 +50,13 @@ class Api::EventsController < ApplicationController
       @event.kit_price = params[:kit_price] || @event.kit_price
       @event.location_description = params[:location_description] || @event.location_description
       @event.address = params[:address] || @event.address
-      @event.img_url = params[:img_url] || @event.img_url
+      # @event.img_url = params[:img_url] || @event.img_url
       @event.slots = params[:slots] || @event.slots
 
+      if params[:image]
+        response = Cloudinary::Uploader.upload(params[:image])
+        @event.img_url = response["secure_url"]
+      end
       
       if @event.save
         render "show.json.jb"
