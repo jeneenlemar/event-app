@@ -24,7 +24,6 @@ class Api::EventsController < ApplicationController
     if params[:image]
       response = Cloudinary::Uploader.upload(params[:image])
       @event.img_url = response["secure_url"]
-
     end
     if @event.save
       render "show.json.jb"
@@ -53,6 +52,8 @@ class Api::EventsController < ApplicationController
       @event.address = params[:address] || @event.address
       @event.img_url = params[:img_url] || @event.img_url
       @event.slots = params[:slots] || @event.slots
+
+      
       if @event.save
         render "show.json.jb"
       else
