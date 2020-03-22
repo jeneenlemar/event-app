@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
       first_name: params[:first_name],
       # last_name: params[:last_name],
       email: params[:email],
+      profile_img: profile_img = "/images/profile_default.png",
       # address: params[:address],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
@@ -30,6 +31,7 @@ class Api::UsersController < ApplicationController
       @user.last_name = params[:last_name] || @user.last_name
       @user.email = params[:email] || @user.email
       @user.address = params[:address] || @user.address
+
       if params[:password]
         @user.password = params[:password]
         @user.password_confirmation = params[:password_confirmation] 
@@ -53,7 +55,6 @@ class Api::UsersController < ApplicationController
   def destroy
     @user = User.find_by(id: params[:id])
     if @user == current_user
-      @user.destroy
       render json: {message: "User account successfully deleted"}
     else
       render json: {message: "unauthorized access for this account"}
