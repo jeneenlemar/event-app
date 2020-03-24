@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
       first_name: params[:first_name],
       # last_name: params[:last_name],
       email: params[:email],
-      profile_img: profile_img = "/images/profile_default.png",
+      profile_img: profile_img = "https://res.cloudinary.com/jlemar/image/upload/v1585079144/profile_default_qsgahg.png",
       # address: params[:address],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
