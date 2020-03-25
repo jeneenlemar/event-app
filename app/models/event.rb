@@ -1,4 +1,7 @@
 class Event < ApplicationRecord
+  validates :location_description, presence: true
+  validates :address, presence: true
+
   belongs_to :user
   has_many :user_events, dependent: :destroy
   belongs_to :category

@@ -24,6 +24,8 @@ class Api::EventsController < ApplicationController
     if params[:image]
       response = Cloudinary::Uploader.upload(params[:image])
       @event.img_url = response["secure_url"]
+    else
+      @event.img_url = "https://res.cloudinary.com/jlemar/image/upload/v1585099862/project_default_iqsdud.png"
     end
     if @event.save
       render "show.json.jb"
