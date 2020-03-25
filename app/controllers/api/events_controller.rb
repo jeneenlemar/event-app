@@ -55,11 +55,11 @@ class Api::EventsController < ApplicationController
       # @event.img_url = params[:img_url] || @event.img_url
       @event.slots = params[:slots] || @event.slots
 
-      if params[:image]  
-        response = Cloudinary::Uploader.upload(params[:image])
+      if params[:img_url]  
+        response = Cloudinary::Uploader.upload(params[:img_url])
         @event.img_url = response["secure_url"]
-      else
-        @event.img_url = @event.img_url
+      # else
+      #   @event.img_url = @event.img_url
       end
 
       if @event.save
